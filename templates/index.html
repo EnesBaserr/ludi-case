@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Ludi Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="icon" href="{{ url_for('static', filename='ludi.png') }}" type="image/png">
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .container {
+        margin-top: 50px;
+      }
+      h1, h2 {
+        color: #343a40;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .card {
+        margin-bottom: 30px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+      .card-header {
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+        border-radius: 10px 10px 0 0;
+      }
+      .table {
+        margin-bottom: 0;
+      }
+      .table th, .table td {
+        vertical-align: middle;
+      }
+      .img-fluid {
+        max-width: 100%;
+        height: auto;
+      }
+      .logo {
+        max-width: 200px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <img src="{{ url_for('static', filename='ludi.png') }}" alt="Logo" class="img-fluid logo">
+        </div>
+      </div>
+      <h1 class="mt-5">Ludi Dashboard</h1>
+      <div class="card">
+        <div class="card-header">
+          User Count per Company
+        </div>
+        <div class="card-body">
+          {% for table in tables %}
+            {{ table|safe }}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          Daily Total User Growth
+        </div>
+        <div class="card-body text-center">
+          <img src="{{ url_for('static', filename='user_growth.png') }}" alt="User Growth" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
