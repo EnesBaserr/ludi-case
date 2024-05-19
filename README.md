@@ -11,7 +11,7 @@ Bu proje, Flask ile yapılmış bir web uygulamasıdır. Kullanıcıların kayı
 1. Repoyu clonelayın:
    ```bash
    git clone https://github.com/EnesBaserr/ludi-case.git
-   cd <repo_ismi>
+   cd <ludi_case>
    
 2. Gerekli Dependencyleri yükleyin.
    ```bash
